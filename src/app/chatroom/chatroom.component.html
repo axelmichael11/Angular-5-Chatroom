@@ -1,0 +1,14 @@
+<div id="chatroom-container">
+  <div id="chatroom-current-container" *ngIf="currentUser">
+    <h1 class='section-title'> Your Nickname: {{currentUser}} </h1>
+  </div>
+
+  <div id="chatroom-users-container" *ngIf="currentUser">
+  <app-current-users></app-current-users>
+  </div>
+  
+  <div id="chatroom-messages-container" *ngIf="currentUser">
+    <app-messages></app-messages>
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+
+<div id="chat-sign-in-container">
+  <h1> To Login into the Chat, Enter your name and nickname !</h1>
+
+  <form id="sign-in-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <label class="sign-in-form-labels"
+    for="nickname">Nickname</label
+    >
+    <input type="text" placeholder="Nickname" ngModel
+    name="nick"
+    [(ngModel)]="f.nick"
+    >
+    <button type="submit"> Enter LocalHost ChatRoom ! </button>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<div id="messages-container">
+
+
+  <div id="message-list">
+    <h1 class='section-title'> Messages  </h1>
+    <ul class="message-list">
+      <li *ngFor="let message of messages">
+        <span class="badge">{{message.msg}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="chatroom-submit-container">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div id="chatroom-message-submit-container">
+          <input type="text"
+            placeholder="Enter message"
+            name= "messageText"
+            [(ngModel)]="messageText"
+          />
+          <button type="submit"> Send Message </button>
+      </div>
+    </form>
+  </div>
+</div>
