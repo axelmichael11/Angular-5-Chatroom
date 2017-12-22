@@ -34,6 +34,7 @@ import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+import { MessagehistoryComponent } from './messagehistory/messagehistory.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
     ChatroomComponent,
     CurrentUsersComponent,
     MessagesComponent,
+    MessagehistoryComponent,
   ],
   imports: [
     FormsModule,

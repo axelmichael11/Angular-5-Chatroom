@@ -1,0 +1,13 @@
+<div class="md-content" layout-align="center start"layout-padding flex>
+    <div layout-gt-xs="row" layout-align-gt-xs="center start" class="margin"
+    *ngFor="let message of messageHistory">
+      <div flex-gt-xs="80">
+        <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
+          <mat-card-title>{{message.from}}</mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            {{message.msg}}
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>

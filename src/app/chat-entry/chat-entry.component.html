@@ -1,32 +1,17 @@
-
-
-
-<!-- <div id="chat-sign-in-container">
-  <h1> To Login into the Chat, Enter your name and nickname !</h1>
-
-  <form id="sign-in-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
-
-    <label class="sign-in-form-labels"
-    for="nickname">Nickname</label
-    >
-    <input type="text" placeholder="Nickname" ngModel
-    name="nick"
-    [(ngModel)]="f.nick"
-    >
-    <button type="submit"> Enter LocalHost ChatRoom ! </button>
-  </form>
-</div> -->
 <td-layout>
 <div layout="column" layout-fill>
   <mat-toolbar color="accent" class="md-whiteframe-z1">
       <span>Local Host Chat Room</span>
     </mat-toolbar>
+
 <div class="md-content" layout-padding flex>
     <div layout-gt-xs="row" layout-align-gt-xs="center start" class="margin">
       <div flex-gt-xs="50">
+        <mat-icon flex layout-align="center center" color="accent" id="logo">face</mat-icon>
         <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
           <mat-card-title>Login</mat-card-title>
-          <mat-card-subtitle>Sign into our Chat Room with a Nick Name!</mat-card-subtitle>
+          <mat-card-subtitle>Sign into my Chat Room with a Nick Name!</mat-card-subtitle>
+          <mat-card-subtitle>Nickname is required, thank you :)</mat-card-subtitle>
           <mat-divider></mat-divider>
 
 

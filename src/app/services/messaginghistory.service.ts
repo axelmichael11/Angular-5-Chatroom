@@ -35,6 +35,18 @@ export class MessagingHistoryService {
     );
   }
 
+  newGetHistory(nick: string): Observable<Response[]> {
+    return this.http.get<ItemsResponse>(this.chatHistoryUrl, httpOptions)
+        .map((response) => {
+          console.log('this is the repsonse, turning to json', response)
+          if (response.errors){
+            catchError(this.handleError('getUsers', []))
+          }
+          return response.data;
+        })
+
+}
+
 
   private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {

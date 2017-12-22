@@ -8,14 +8,17 @@
         <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
           <mat-card-title>{{message.from}}</mat-card-title>
           <mat-divider></mat-divider>
-          <mat-card-content>
+          <mat-card-content *ngIf="message.message">
             {{message.message}}
+          </mat-card-content>
+          <mat-card-content >
+            {{message.msg}}
           </mat-card-content>
         </mat-card>
       </div>
     </div>
 
-    <!-- <td-layout-footer color="primary" layout-align="center center"> -->
+
     <mat-card flex-gt-xs="80">
       <mat-card-content>
         <form #f="ngForm" (ngSubmit)="onSubmit(f)">
@@ -31,32 +34,4 @@
   </form>
   </mat-card-content>
     </mat-card>
-  <!-- </td-layout-footer> -->
   </div>
-
-
-<!-- <div id="messages-container">
-
-
-  <div id="message-list">
-    <h1 class='section-title'> Messages  </h1>
-    <ul class="message-list">
-      <li *ngFor="let message of messages">
-        <span class="badge">{{message.msg}}</span>
-      </li>
-    </ul>
-  </div>
-
-  <div id="chatroom-submit-container">
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-      <div id="chatroom-message-submit-container">
-          <input type="text"
-            placeholder="Enter message"
-            name= "messageText"
-            [(ngModel)]="messageText"
-          />
-          <button type="submit"> Send Message </button>
-      </div>
-    </form>
-  </div>
-</div> -->

@@ -7,6 +7,8 @@
       <mat-nav-list *ngFor="let user of users">
         <button mat-raised-button
         color="accent"
+        (click)="onSelect(user.nick)"
+  [class.selected]="user === selectedUser"
          mat-list-item><mat-icon>face</mat-icon>
         <span class="badge">{{user.nick}}</span>
         </button>
@@ -20,7 +22,17 @@
         <mat-icon>face</mat-icon>
       </button>
       Welcome {{currentUser}}!
+      <span flex></span>
+    <button mat-raised-button
+    color="accent"
+    *ngIf="selectedUser"
+    (click)="returnGroupChat()"
+     ><mat-icon>replay</mat-icon>
+    Back to the Group Chat!
+    </button>
     </div>
-    <app-messages></app-messages>
+
+    <app-messagehistory [messageHistory]="filteredHistory" *ngIf="selectedUser" ></app-messagehistory>
+    <app-messages *ngIf="!selectedUser"></app-messages>
   </td-layout-nav>
 </td-layout>
