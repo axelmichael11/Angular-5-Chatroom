@@ -1,4 +1,41 @@
-<div id="messages-container">
+
+
+
+<div class="md-content" layout-align="center start"layout-padding flex>
+    <div layout-gt-xs="row" layout-align-gt-xs="center start" class="margin"
+    *ngFor="let message of messages">
+      <div flex-gt-xs="80">
+        <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
+          <mat-card-title>{{message.from}}</mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            {{message.message}}
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- <td-layout-footer color="primary" layout-align="center center"> -->
+    <mat-card flex-gt-xs="80">
+      <mat-card-content>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+          <div layout="row">
+            <mat-form-field>
+              <input matInput  ngModel placeholder="Message" type="text"  name="messageText" [(ngModel)]="f.messageText" required>
+              <mat-divider></mat-divider>
+
+            </mat-form-field>
+          </div>
+          <button layout="column" layout-align="center center" mat-raised-button color="accent" type="submit">Send Message</button>
+  </form>
+  </mat-card-content>
+    </mat-card>
+  <!-- </td-layout-footer> -->
+  </div>
+
+
+<!-- <div id="messages-container">
 
 
   <div id="message-list">
@@ -22,4 +59,4 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->

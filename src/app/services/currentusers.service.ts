@@ -34,6 +34,17 @@ export class CurrentusersService {
     );
   }
 
+  newGetUsers(): Observable<User[]> {
+    return this.http.get<UsersResponse>(this.usersUrl, httpOptions)
+        .map((response) => {
+          console.log('this is the repsonse, turning to json', response)
+          if (response.errors){
+            catchError(this.handleError('getUsers', []))
+          }
+          return response.data;
+        })
+}
+
 
   private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {

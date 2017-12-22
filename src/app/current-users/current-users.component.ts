@@ -18,7 +18,7 @@ export class CurrentUsersComponent implements OnInit {
     console.log('hitting the userHistory API Call service method BEFORE THE METHOD...this is the data!', this.users)
     this.CurrentUsersService.getUsers().subscribe(user=>{
       this.users.push(user.data)
-      console.log('hitting the userHIstory API Call service method...this is the data!', this.users.data)
+      // console.log('hitting the userHIstory API Call service method...this is the data!', this.users.data)
       // this.messages.push(message)
     })
   }

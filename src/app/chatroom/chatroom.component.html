@@ -1,14 +1,26 @@
-<div id="chatroom-container">
-  <div id="chatroom-current-container" *ngIf="currentUser">
-    <h1 class='section-title'> Your Nickname: {{currentUser}} </h1>
-  </div>
+<td-layout>
+  <td-navigation-drawer flex sidenavTitle="{{currentUser}}" name="Current users List"
+  >
+    <!-- <mat-nav-list>
+    </mat-nav-list> -->
+    <div td-navigation-drawer-menu >
+      <mat-nav-list *ngFor="let user of users">
+        <button mat-raised-button
+        color="accent"
+         mat-list-item><mat-icon>face</mat-icon>
+        <span class="badge">{{user.nick}}</span>
+        </button>
+      </mat-nav-list>
+    </div>
+  </td-navigation-drawer>
 
-  <div id="chatroom-users-container" *ngIf="currentUser">
-  <app-current-users></app-current-users>
-  </div>
-  
-  <div id="chatroom-messages-container" *ngIf="currentUser">
+  <td-layout-nav color="accent">
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <button mat-icon-button td-menu-button tdLayoutToggle (click)="seeCurrentUsers()">
+        <mat-icon>face</mat-icon>
+      </button>
+      Welcome {{currentUser}}!
+    </div>
     <app-messages></app-messages>
-  </div>
-
-</div>
+  </td-layout-nav>
+</td-layout>

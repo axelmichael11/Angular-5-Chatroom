@@ -1,5 +1,7 @@
 
-<div id="chat-sign-in-container">
+
+
+<!-- <div id="chat-sign-in-container">
   <h1> To Login into the Chat, Enter your name and nickname !</h1>
 
   <form id="sign-in-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
@@ -13,4 +15,37 @@
     >
     <button type="submit"> Enter LocalHost ChatRoom ! </button>
   </form>
+</div> -->
+<td-layout>
+<div layout="column" layout-fill>
+  <mat-toolbar color="accent" class="md-whiteframe-z1">
+      <span>Local Host Chat Room</span>
+    </mat-toolbar>
+<div class="md-content" layout-padding flex>
+    <div layout-gt-xs="row" layout-align-gt-xs="center start" class="margin">
+      <div flex-gt-xs="50">
+        <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
+          <mat-card-title>Login</mat-card-title>
+          <mat-card-subtitle>Sign into our Chat Room with a Nick Name!</mat-card-subtitle>
+          <mat-divider></mat-divider>
+
+
+          <mat-card-content>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+              <div layout="row">
+                <mat-form-field>
+                  <input matInput  ngModel placeholder="NickName" type="text" maxlength="30" name="nick" [(ngModel)]="f.nick" required>
+                  <mat-divider></mat-divider>
+                </mat-form-field>
+              </div>
+              <button mat-raised-button color="accent" type="submit">Sign In</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+      </div>
+    </div>
+  </div>
+
 </div>
+</td-layout >

@@ -11,6 +11,7 @@ import { ChatroomComponent } from '../chatroom/chatroom.component'
 const routes : Routes = [
 
       {path: 'login', component: ChatEntryComponent},
+      { path: '',   redirectTo: '/login', pathMatch: 'full' },
       {path: 'chatroom/:nick', component: ChatroomComponent }
     ];
 

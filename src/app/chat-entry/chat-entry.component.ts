@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms'
 import {Observable, Subject} from 'rxjs'
-
 // import { WebsocketService } from '../services/websocket.service';
 // import {EnterchatroomService} from '../services/enterchatroom.service'
 
+
+import { NgModule } from '@angular/core';
+// import { CovalentFileModule } from '@covalent/core';
 
 import { ChatService } from '../services/chat.service'
 import {User} from '../services/user/user.service.model'
@@ -12,13 +14,13 @@ import {User} from '../services/user/user.service.model'
 @Component({
   selector: 'app-chat-entry',
   templateUrl: './chat-entry.component.html',
-  styleUrls: ['./chat-entry.component.css']
+  styleUrls: ['./chat-entry.component.scss']
 })
-
+//
 
 export class ChatEntryComponent implements OnInit {
   nickNameEntry: User;
-  // currentUser: object;
+  currentUser: string;
   // connectionStatus: string;
   constructor(private ChatService: ChatService){ }
 
@@ -35,6 +37,12 @@ export class ChatEntryComponent implements OnInit {
       console.log('this is the result...',response)
       this.result(response)
     })
+
+    this.ChatService.CurrentNickname.subscribe(msg => {
+      console.log('hitting the currentnickname subscribing..',msg)
+      this.currentUser = msg
+
+    });
   }
 
 
