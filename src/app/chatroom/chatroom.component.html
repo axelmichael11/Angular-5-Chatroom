@@ -1,15 +1,17 @@
 <td-layout>
-  <td-navigation-drawer flex sidenavTitle="{{currentUser}}" name="Current users List"
+  <td-navigation-drawer flex sidenavTitle="{{currentUser}}" name="Current users List (click for history)"
   >
-    <!-- <mat-nav-list>
-    </mat-nav-list> -->
+
     <div td-navigation-drawer-menu >
       <mat-nav-list *ngFor="let user of users">
-        <button mat-raised-button
+       <span flex></span>
+        <button layout-align="end center" mat-raised-button
         color="accent"
         (click)="onSelect(user.nick)"
   [class.selected]="user === selectedUser"
-         mat-list-item><mat-icon>face</mat-icon>
+         mat-list-item>
+         <mat-icon flex class="current-user-logo" layout="end center">face</mat-icon>
+         <mat-icon>hourglass_empty</mat-icon>
         <span class="badge">{{user.nick}}</span>
         </button>
       </mat-nav-list>

@@ -29,19 +29,16 @@ wssServer.on('connection', function(ws, req) {
     const ip = ws.upgradeReq.headers['sec-websocket-key']
 
     util.log("Connection from " + util.inspect(ws.upgradeReq.headers['sec-websocket-key']));
-    // ws.send("Hello from Leadin chat. Set the nickname with the command /nick nickname before chatting away.");
+
 
 
     ws.on('message', function(msg) {
-      console.log('response...',msg);
+      console.log('response',msg);
         if(msg[0] === '/') {
-            console.log('hitting the msg[0]..')
             chatProtocol.handleCommand(ws, msg);
         } else {
             if(ws.user) { //we know who this is
-              console.log('not hitting the msg[0].. this should be the user and the message!!!',ws.user.nick, msg )
-              
-                chatProtocol.broadcast(ws.user.nick, msg);
+              chatProtocol.broadcast(ws.user.nick, msg);
             } else {
 
                 util.log("Chat ignored from unidentified user");

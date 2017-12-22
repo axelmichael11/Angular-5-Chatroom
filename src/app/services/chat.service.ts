@@ -22,7 +22,6 @@ export class ChatService {
             .connect(URL)
             .map((response: MessageEvent): User => {
                 let data = JSON.parse(response.data);
-                console.log('this is the dataaa from the usersubmission...', response, data)
                 return data
             });
 
@@ -30,7 +29,6 @@ export class ChatService {
             .connect(URL)
             .map((response: MessageEvent): Message => {
                 let data = JSON.parse(response.data);
-                console.log('this is the dataaa from the messages....', response, data)
                 return data
             });
 

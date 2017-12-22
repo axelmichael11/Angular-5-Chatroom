@@ -23,10 +23,8 @@ export class MessagingHistoryService {
 
   constructor(private http: HttpClient){ }
 
-  // sendMessage(message){
-  //   // this.connection.emit('add-message', message);
-  // }
 
+// leaving this function.... the tail end doesn't seem to work and I need to investivate what pipe does exactly...
   getHistory(): Observable<Response[]> {
   return this.http.get<ItemsResponse>(this.chatHistoryUrl, httpOptions)
   .pipe(
@@ -38,7 +36,6 @@ export class MessagingHistoryService {
   newGetHistory(nick: string): Observable<Response[]> {
     return this.http.get<ItemsResponse>(this.chatHistoryUrl, httpOptions)
         .map((response) => {
-          console.log('this is the repsonse, turning to json', response)
           if (response.errors){
             catchError(this.handleError('getUsers', []))
           }

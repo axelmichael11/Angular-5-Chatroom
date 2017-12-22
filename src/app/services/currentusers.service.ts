@@ -25,6 +25,8 @@ export class CurrentusersService {
 
   constructor(private http: HttpClient){ }
 
+
+// leaving this function.... the tail end doesn't seem to work and I need to investivate what pipe does exactly...
   getUsers(): BehaviorSubject<UserResponse[]> {
   return this.http.get<UsersResponse>(this.usersUrl, httpOptions)
   .pipe(

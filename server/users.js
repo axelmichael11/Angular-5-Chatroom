@@ -12,13 +12,13 @@ exports = module.exports = function() {
         createUser: function(id) {
            if(!_users[id]) {
                _users[id] = new User(id);
-               console.log('this is the createUser function...',_users, _users[id])
+
                return _users[id];
            }
            return null;
         },
         getUser: function(id) {
-            console.log('this is the getUser function..',_users);
+            
             return _users[id];
         },
         getAll: function() {

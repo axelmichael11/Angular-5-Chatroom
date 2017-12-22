@@ -7,7 +7,7 @@
 
     router.route('/users')
         .get(function(req, res) {
-            console.log('this should be all of the users!!!',_users.getAll())
+            
             res.status(200).send({errors: null, data: _users.getAll()});
         });
 
