@@ -17,11 +17,8 @@ const httpOptions = {
 @Injectable()
 export class CurrentusersService {
   usersUrl = 'http://localhost:8888/users';  // URL to web routes...
-  // private url = 'ws://localhost:8888';
-  // private connection;
-  private currentUsersSource: new BehaviorSubject<UserResponse[]>([]);
 
-  // currentUser = this.currentUsersSource.asObservable();
+  private currentUsersSource: new BehaviorSubject<UserResponse[]>([]);
 
   constructor(private http: HttpClient){ }
 
@@ -52,7 +49,7 @@ export class CurrentusersService {
   return (error: any): Observable<T> => {
 
     // TODO: send the error to remote logging infrastructure
-    console.error(error); // log to console instead
+    // console.error(error); // log to console instead
 
     // TODO: better job of transforming error for user consumption
     this.log(`${operation} failed: ${error.message}`);
